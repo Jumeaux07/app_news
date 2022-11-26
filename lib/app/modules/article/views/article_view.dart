@@ -53,7 +53,7 @@ class ArticleView extends GetView<ArticleController> {
                             style: TextStyle(
                               color: Colors.white
                             ),
-                          ):Text(""),
+                          ):Text("mot clés", style: TextStyle(color:Colors.white,)),
                         ]
                       ),
                       Row(
@@ -72,12 +72,12 @@ class ArticleView extends GetView<ArticleController> {
                     style: Theme.of(context).textTheme.headline6,
                   ),
                   SizedBox(height: 30,),
-                  Text(
+                  article['content'] != null ? Text(
                     article['content'], 
                     overflow: TextOverflow.clip,
                     maxLines: 35,
                     style: Theme.of(context).textTheme.bodyText1,
-                  ),
+                  ):Text("Desolé pas de connue pour cet article"),
                 ],
               ),
             ),
@@ -123,13 +123,13 @@ class _NewsHeadLine extends StatelessWidget {
               ),
             ),
             SizedBox(height: 15,),
-            Text(
+            article['description'] != null ?Text(
               article['description'],
               maxLines: 3,
               style: Theme.of(context).textTheme.subtitle1.copyWith(
                 color: Colors.white,
               ),
-            ),
+            ):Text("Desolé pas de description pour cet article"),
         ],
       ),
     );
