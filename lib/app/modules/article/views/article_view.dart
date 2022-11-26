@@ -22,7 +22,65 @@ class ArticleView extends GetView<ArticleController> {
         extendBodyBehindAppBar: true,
         body: ListView(
           children: [
-            _NewsHeadLine(article: article,)
+            _NewsHeadLine(article: article,),
+            Container(
+              height: Get.height,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20), 
+                  topRight: Radius.circular(20)  
+                ),
+              ),
+              padding: EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      CustomTag(
+                        backgrounColor: Colors.black, 
+                        children: [
+                          ImageContainer(
+                            width: 30, 
+                            height: 30,
+                            borderRadius: 50,
+                            imageUrl: article['image_url']
+                          ),
+                          SizedBox(width:10),
+                          article['keywords'] !=null?
+                          Text(article['keywords'][0], 
+                            style: TextStyle(
+                              color: Colors.white
+                            ),
+                          ):Text(""),
+                        ]
+                      ),
+                      Row(
+                        children: [
+                          Icon(Icons.schedule),
+                        Text(article['pubDate'])
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 30,),
+                  Text(
+                    article['title'],
+                    maxLines: 2, 
+                    overflow: TextOverflow.clip,
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                  SizedBox(height: 30,),
+                  Text(
+                    article['content'], 
+                    overflow: TextOverflow.clip,
+                    maxLines: 35,
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -66,7 +124,7 @@ class _NewsHeadLine extends StatelessWidget {
             ),
             SizedBox(height: 15,),
             Text(
-              article['content'],
+              article['description'],
               maxLines: 3,
               style: Theme.of(context).textTheme.subtitle1.copyWith(
                 color: Colors.white,

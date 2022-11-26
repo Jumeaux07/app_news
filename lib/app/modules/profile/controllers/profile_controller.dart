@@ -4,6 +4,7 @@ class ProfileController extends GetxController {
   //TODO: Implement ProfileController
 
   final count = 0.obs;
+   final bool isSwitched = false;
   @override
   void onInit() {
     super.onInit();

@@ -19,7 +19,6 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         elevation: 0,
         leading: Icon(Icons.menu,color: Colors.white,),
