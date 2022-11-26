@@ -1,0 +1,29 @@
+name: app_news
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.2.0 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.5.1
+  flutter: 
+    sdk: flutter
+  connectivity: ^3.0.6
+  get_storage: ^2.0.3
+  liquid_pull_to_refresh: ^2.0.0
+
+dev_dependencies: 
+  lints: 1.0.1
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  
+  assets:
+    - assets/lets-encrypt-r3.pem
+    - assets/images/LYNXNPEC180BO_L.jpg
+
+
